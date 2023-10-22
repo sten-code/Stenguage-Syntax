@@ -1,0 +1,123 @@
+{
+    "name": "Stenguage",
+    "scopeName": "source.sten",
+    "fileTypes": [
+        "sten"
+    ],
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#punctuation"
+        },
+        {
+            "include": "#function-def"
+        },
+        {
+            "include": "#variable"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.sten",
+                    "match": "//.*"
+                },
+                {
+                    "name": "comment.block.sten",
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "patterns": [
+                        {
+                            "name": "punctuation.definition.comment.sten",
+                            "match": "/\\*|\\*/"
+                        }
+                    ]
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.sten",
+                    "match": "\\b(import|from|for|if|else|return|break|continue|skip)\\b"
+                },
+                {
+                    "name": "storage.type.primitive.sten",
+                    "match": "\\b(let|const|null|true|false|fn)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.sten",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.sten",
+                            "match": "\\\\(u[0-9A-Fa-f]{4}|[\"\\\\\\/bfnrt])"
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.sten",
+                    "match": "\\b-?\\d+(\\.\\d+)?\\b"
+                }
+            ]
+        },
+        "punctuation": {
+            "patterns": [
+                {
+                    "name": "punctuation.separator.sten",
+                    "match": "[\\[\\]{}(),.:]"
+                },
+                {
+                    "name": "punctuation.operator.sten",
+                    "match": "[-+=*/]"
+                }
+            ]
+        },
+        "function-def": {
+            "patterns": [
+                {
+                    "name": "storage.type.primitive.sten",
+                    "match": "\\bfn\\b"
+                },
+                {
+                    "name": "entity.name.function.sten",
+                    "match": "\\bfn\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\b"
+                }
+            ]
+        },
+        "variable": {
+            "patterns": [
+                {
+                    "name": "variable.reference.sten",
+                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b(?=\\s*\\()",
+                    "captures": {
+                        "0": {
+                            "name": "entity.name.function.sten"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

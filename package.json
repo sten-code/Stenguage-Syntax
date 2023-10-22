@@ -1,0 +1,25 @@
+{
+  "name": "stenguage",
+  "displayName": "Stenguage",
+  "description": "Stenguage Highlighting",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "sten",
+      "aliases": ["Stenguage", "sten"],
+      "extensions": [".sten"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "sten",
+      "scopeName": "source.sten",
+      "path": "./syntaxes/sten.tmLanguage.json"
+    }]
+  }
+}
