@@ -51,7 +51,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.sten",
-                    "match": "\\b(import|from|for|if|else|return|break|continue|skip)\\b"
+                    "match": "\\b(class|while|import|from|for|if|else|return|break|continue|skip)\\b"
                 },
                 {
                     "name": "storage.type.primitive.sten",
